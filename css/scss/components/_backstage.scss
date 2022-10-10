@@ -1,0 +1,51 @@
+.backstage {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 12px;
+    height: 605px;
+    width: 205px;
+    background-image: url("../../assets/images/flower_backstage.png");
+  }
+}
+
+.backstage__wrapper {
+  width: $inner-wrapper-width;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 140px;
+}
+
+.backstage__image {
+  width: 609px;
+  height: 403px;
+}
+
+.backstage_right-column-wrapper {
+  width: 465px;
+}
+
+.backstage__header {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 48px;
+  line-height: 120%;
+  font-weight: 400;
+}
+
+.backstage__text {
+  margin: 0;
+  margin-bottom: 54px;
+}
+
+.backstage__subtitle {
+  margin: 0;
+  margin-bottom: 37px;
+  font-size: 24px;
+  line-height: 120%;
+}

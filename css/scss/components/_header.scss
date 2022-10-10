@@ -1,0 +1,23 @@
+.header {
+  background-color: $header-bg-color;
+  color: $header-color;
+  min-height: 80px;
+  box-sizing: border-box;
+  padding: 14px 220px;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.header__logo-img {
+  display: block;
+  margin-right: 24px;
+}
+
+.header__navigation {
+  .navigation__item:last-child {
+    margin-left: 380px;
+  }
+}

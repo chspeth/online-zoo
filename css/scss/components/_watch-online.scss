@@ -1,0 +1,57 @@
+.watch-online {
+  background-image: url("../../assets/images/panda_bg.jpg");
+  background-color: $header-bg-color;
+  background-position: center top -220px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  width: 1600px;
+
+  @media (min-width: $big-desktop-width) {
+    width: 100%;
+  }
+}
+
+.watch-online__wrapper {
+  position: relative;
+  width: $inner-wrapper-width;
+  margin: 0 auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    right: 108px;
+    width: 465px;
+    height: 465px;
+    background: $button-gradient;
+    border-radius: 50%;
+  }
+}
+
+.watch-online__text {
+  position: absolute;
+  color: $header-color;
+  margin: 0;
+  font-weight: 700;
+  font-size: 106.496px;
+  line-height: 75%;
+  text-transform: uppercase;
+  text-align: center;
+  width: 470px;
+  top: 86px;
+  right: 100px;
+  z-index: 1;
+  letter-spacing: -5px;
+}
+
+.watch-online__accent-color {
+  color: #ffee2e;
+}
+
+.watch-online__button {
+  position: absolute;
+  top: 546px;
+  right: 99px;
+  border-radius: 25px;
+}
