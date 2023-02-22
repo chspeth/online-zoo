@@ -1,5 +1,23 @@
+.page__main {
+  @media (max-width: $tablet-width) {
+    margin-top: 34px;
+  }
+}
+
 .page__backstage {
-  margin-bottom: 131px;
+  margin-bottom: 126px;
+
+  @media (max-width: $small-desktop-width) {
+    margin-bottom: 95px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 54px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 30px;
+  }
 }
 
 .page__iambeging {
@@ -22,7 +40,6 @@
 }
 
 .page__panda-img {
-  display: block;
   margin: 0 auto;
   background-image: url("../assets/images/panda_bg.jpg");
   background-position: center;
@@ -31,7 +48,18 @@
   height: 385px;
   max-width: 1600px;
 
-  @media (min-width: $big-desktop-width) {
-    width: 100%;
+  @media (max-width: $small-desktop-width) {
+    height: 390px;
+  }
+
+  @media (max-width: $tablet-width) {
+    height: 335px;
+  }
+
+  @media (max-width: $mobile-width) {
+    height: 187px;
+    background-size: 700px 470px;
+    background-position: top -135px left -130px;
   }
 }
+

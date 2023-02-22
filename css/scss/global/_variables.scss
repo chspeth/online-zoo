@@ -16,9 +16,13 @@ $invalid-color: #d31414;
 $default-color: #333b41;
 $donate-pg-color: #ffffff;
 $submit-bg-color: #f1f3f2;
+$additional-header-bg-color: #ffffff;
 
 //Viewports
-$inner-wrapper-width: 1160px;
+$inner-wrapper-width: 72.5%;
+$inner-small-desktop-wrapper: 94%;
+$inner-tablet-wrapper: 93.75%;
+$inner-mobile-wrapper: 93.75%;
 $big-desktop-width: 1600px;
 $small-desktop-width: 1000px;
 $tablet-width: 640px;

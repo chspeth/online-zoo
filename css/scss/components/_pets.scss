@@ -2,6 +2,7 @@
 
 .pets {
   position: relative;
+  overflow: hidden;
 
   &::before {
     content: '';
@@ -11,7 +12,26 @@
     height: 460px;
     width: 290px;
     background-image: url("../../assets/images/flower2_backstage.png");
+    background-repeat: no-repeat;
     z-index: -1;
+
+    @media (max-width: $small-desktop-width) {
+      height: 202px;
+      width: 194px;
+      background-image: url("../../assets/images/flower2-1_backstage.png");
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 134px;
+      background-size: contain;
+      background-image: url("../../assets/images/flower2_backstage.png");
+    }
+
+    @media (max-width: $mobile-width) {
+      background-size: 70px 120px;
+      bottom: -90px;
+      left: 0;
+    }
   }
 
   &::after {
@@ -23,6 +43,24 @@
     height: 275px;
     background-image: url("../../assets/images/flower3_backstage.png");
     z-index: -1;
+    background-repeat: no-repeat;
+
+    @media (max-width: $small-desktop-width) {
+      height: 180px;
+      width: 241px;
+      background-size: contain;
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 175px;
+      height: 131px;
+    }
+
+    @media (max-width: $mobile-width) {
+      background-size: 110px 60px;
+      bottom: -70px;
+      right: -30%;
+    }
   }
 }
 
@@ -30,22 +68,54 @@
   width: $inner-wrapper-width;
   margin: 0 auto;
   padding-bottom: 100px;
+
+  @media (max-width: $small-desktop-width) {
+    width: $inner-small-desktop-wrapper;
+    padding-bottom: 140px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: $inner-tablet-wrapper;
+    padding-bottom: 100px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 60px;
+  }
 }
 
 .pets__list {
   list-style-type: none;
-  margin: 0;
+  margin: 0 auto;
   margin-bottom: 80px;
   padding: 0;
+  max-width: 1160px;
 
   display: grid;
-  grid-template-columns: repeat(3, 366px);
-  gap: 22px 30px;
+  grid-template-columns: repeat(3, 31.6%);
+  gap: 19px 30px;
+
+  @media (max-width: $small-desktop-width) {
+    grid-template-columns: repeat(3, 31.3%);
+    gap: 92px 29px;
+  }
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: repeat(2, 47.6%);
+    margin-bottom: 59px;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: 100%;
+    gap: 20px;
+    margin-bottom: 18px;
+    width: 95%;
+  }
 }
 
 .pets__item {
   position: relative;
-  width: 366px;
+  width: 100%;
   box-sizing: border-box;
   border: 2px solid transparent;
   background: $button-gradient;
@@ -54,12 +124,18 @@
   p {
     margin: 0;
     margin-left: 15px;
+
+    @media (max-width: $mobile-width) {
+      margin-left: 10px;
+    }
   }
 
   &::before {
     position: absolute;
     content: '';
     bottom: 12px;
+    z-index: 1;
+    background-repeat: no-repeat;
   }
 
   &--fruit::before {
@@ -67,6 +143,12 @@
     width: 33px;
     height: 37px;
     background-image: url("../../assets/icons/banana-bamboo_icon.svg");
+
+    @media (max-width: $tablet-width) {
+      bottom: 3px;
+      right: 3px;
+      background-size: 27px;
+    }
   }
 
   &--meat::before {
@@ -74,10 +156,27 @@
     width: 48px;
     height: 38px;
     background-image: url("../../assets/icons/meat-fish_icon.svg");
+
+    @media (max-width: $tablet-width) {
+      bottom: 2px;
+      right: -4px;
+      background-size: 38px 30px;
+    }
   }
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: $tablet-width) {
+    &:last-child,
+    &:nth-last-child(2) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    border: 1px solid transparent;
   }
 }
 
@@ -94,9 +193,9 @@
   position: absolute;
   top: 364px;
   color: white;
-  z-index: -1;
+  z-index: -2;
   
-  transition: display 1s, top 2s;
+  transition: z-index 1s, top 2s;
 }
 
 .pets__img {
@@ -104,7 +203,8 @@
   display: block;
   width: 100%;
   height: auto;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
+  border: none;
 
   &:hover {
     border-radius: 0;
@@ -116,6 +216,14 @@
       top: 0;
     }
   }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 7px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 8px;
+  }
 }
 
 .pets__name {
@@ -126,22 +234,60 @@
   text-transform: uppercase;
   margin-bottom: 2px;
   letter-spacing: -1px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 13px;
+    margin-left: 15px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 12px;
+  }
 }
 
 .pets__native{
   font-size: 15px;
   line-height: 120%;
   padding-bottom: 10px;
+  margin-left: 2px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 10px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 11px;
+  }
 }
 
 .pets__arrows-wrapper {
   position: absolute;
-  top: 400px;
-  left: 138px;
-  width: 1322px;
+  top: calc(39.5% - 31px);
+  left: 8.7%;
+  width: 82.6%;
+  min-width: 910px;
+  max-width: 1330px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: $small-desktop-width) {
+    top: calc(37% - 31px);
+    left: calc(50% - 147.5px);
+    width: 295px;
+    min-width: 295px;
+  }
+
+  @media (max-width: $tablet-width) {
+    top: calc(38.5% - 31px);
+    min-width: 154px;
+    width: 154px;
+    left: calc(50% - 77px);
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .pets__arrow {

@@ -1,5 +1,6 @@
 .backstage {
   position: relative;
+  overflow: hidden;
 
   &::before {
     content: '';
@@ -9,6 +10,32 @@
     height: 605px;
     width: 205px;
     background-image: url("../../assets/images/flower_backstage.png");
+    z-index: -1;
+    transition: all 2s;
+    opacity: 1;
+
+    @media (max-width: 1200px) {
+      opacity: 0.4;
+    }
+
+    @media (max-width: $small-desktop-width) {
+      background-image: none;
+    }
+
+    @media (max-width: $tablet-width) {
+      background-image: url("../../assets/images/flower_backstage.png");
+      background-size: 155px 505px;
+      background-repeat: no-repeat;
+      right: -12%;
+      top: -6px;
+      opacity: 1;
+    }
+
+    @media (max-width: $mobile-width) {
+      background-size: 90px 220px;
+      right: -52%;
+      top: 40px;
+    }
   }
 }
 
@@ -19,15 +46,50 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 140px;
+
+  @media (max-width: $small-desktop-width) {
+    padding-top: 108px;
+    width: $inner-small-desktop-wrapper;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: $inner-tablet-wrapper;
+    padding-top: 70px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 115px;
+  }
 }
 
 .backstage__image {
+  display: block;
   width: 609px;
   height: 403px;
+  margin-right: 20px;
+
+  @media (max-width: $small-desktop-width) {
+    width: 48.4%;
+    height: 408px;
+    object-fit: cover;
+    margin-right: 31px;
+  }
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
-.backstage_right-column-wrapper {
+.backstage__right-column-wrapper {
   width: 465px;
+
+  @media (max-width: $tablet-width) {
+    width: 77.5%;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+  }
 }
 
 .backstage__header {
@@ -36,11 +98,33 @@
   font-size: 48px;
   line-height: 120%;
   font-weight: 400;
+
+  @media (max-width: $small-desktop-width) {
+    margin-top: -10px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
 }
 
 .backstage__text {
   margin: 0;
   margin-bottom: 54px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 31px;
+    width: 485px;
+  }
+
+  @media (max-width: 570px) {
+    width: 100%;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .backstage__subtitle {
@@ -48,4 +132,16 @@
   margin-bottom: 37px;
   font-size: 24px;
   line-height: 120%;
+
+  @media (max-weight: $small-desktop-width) {
+    margin-bottom: 34px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 10px;
+  }
 }

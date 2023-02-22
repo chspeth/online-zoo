@@ -3,11 +3,47 @@
   min-height: 443px;
   box-sizing: border-box;
   padding-top: 40px;
+  overflow: hidden;
+
+  @media (max-width: $tablet-width) {
+    min-height: 282px;
+    padding-top: 12px;
+  }
+
+  @media (max-width: $mobile-width) {
+    position: relative;
+    min-height: 334px;
+
+    &::after {
+      position: absolute;
+      content: 'PetStory online';
+      top: 20px;
+      left: calc(50% - 64px);
+      margin: 0 auto;
+      font-size: 19px;
+      color: $footer-color;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url("../../../assets/icons/bamboo.svg");
+      background-size: 8px 21px;
+      width: 8px;
+      height: 21px;
+      left: 53.5%;
+      top: 18px;
+    }
+  }
 }
 
 .footer__wrapper {
   width: $inner-wrapper-width;
   margin: 0 auto;
+
+  @media (max-width: $small-desktop-width) {
+    width: $inner-small-desktop-wrapper;
+  }
 }
 
 .footer__upper_wrapper {
@@ -15,7 +51,26 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 36px;
+  margin-bottom: 37px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 29px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 117px;
+  }
+}
+
+.footer__subscribe {
+  @media (max-width: $small-desktop-width) {
+    margin-right: 35px;
+  }
+
+  @media (max-width: $tablet-width) {
+    display: none;
+    margin-bottom: 32px;
+  }
 }
 
 .footer__subscribe-label {
@@ -92,25 +147,55 @@
   padding-top: 16px;
   border-radius: 5px;
   margin-bottom: 49px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 66px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 30px;
+  }
 }
 
 .footer__lower-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: $tablet-width) {
+    position: relative;
+    font-size: 14px;
+  }
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column-reverse;
+  }
 }
 
 .footer__social-list {
   margin: 0;
   margin-left: 38px;
   padding: 0;
-  padding-right: 80px;
+  padding-right: 120px;
   list-style-type: none;
+
+  @media (max-width: $tablet-width) {
+    position: absolute;
+    top: -200px;
+    right: -165px;
+  }
+
+  @media (max-width: $mobile-width) {
+    top: -135px;
+    left: calc(50% - 65px);
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .footer__social-item {
   position: relative;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 
   &::before {
     position: absolute;
@@ -123,6 +208,10 @@
     left: -38px;
     background-position: center;
     background-repeat: no-repeat;
+
+    @media (max-width: $tablet-width) {
+      left: -70px;
+    }
   }
 
   &--facebook::before {
@@ -148,6 +237,34 @@
   &:active::before {
     background-color: $button-active;
   }
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-right: 55px;
+  }
+}
+
+.footer__social-list--donate {
+  .footer__social-item {
+    &--facebook::before {
+      background-image: url("../assets/icons/facebook.svg");
+    }
+  
+    &--twitter::before {
+      background-image: url("../assets/icons/twitter.svg");
+    }
+  
+    &--instagram::before {
+      background-image: url("../assets/icons/instagram.svg");
+    }
+  
+    &--youTube::before {
+      background-image: url("../assets/icons/youTube.svg");
+    }
+  }
 }
 
 .footer__social-link {
@@ -164,6 +281,17 @@
   }
 }
 
+.footer__navigation {
+  @media (max-width: $small-desktop-width) {
+    padding-right: 15px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
 .footer__navigation,
 .footer__designed {
   align-self: flex-end;
@@ -171,7 +299,23 @@
 
 .footer__designed {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+
+  @media (max-width: $small-desktop-width) {
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: $tablet-width) {
+    br {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 15px;
+    line-height: 120%;
+  }
 }
 
 .footer__text {
@@ -182,5 +326,30 @@
   &:active {
     color: $button-active;
     text-decoration: underline;
+  }
+
+  @media (max-width: $tablet-width) {
+    &:not(:last-child) {
+    display: block;
+    margin-bottom: 7px;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    &:not(:last-child) {
+      margin-bottom: 13px;
+      }
+  }
+}
+
+.footer__logo-img {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.footer__social-text {
+  @media (max-width: $tablet-width) {
+    font-size: 0;
   }
 }
