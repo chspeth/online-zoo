@@ -742,12 +742,13 @@
         top: -6px;
         left: -6px;
 
-        // @media (max-width: $mobile-width) {
-        //   width: 11.5px;
-        //   height: 11.5px;
-        //   top: -15px;
-        //   left: -6px;
-        // }
+        @media (max-width: $mobile-width) {
+          width: 11.48px;
+          height: 11.48px;
+          top: -3.15px;
+          left: -3.15px;
+          border-width: 1px;
+        }
       }
   
       &::before {
@@ -759,7 +760,15 @@
         border: 2px solid #FE9013;
         border-radius: 50%;
         top: -15px;
-        left: -15px;
+        left: -14.5px;
+
+        @media (max-width: $mobile-width) {
+          width: 20px;
+          height: 20px;
+          top: -7.8px;
+          left: -7.5px;
+          border-width: 1px;
+        }
       }
     }
   }
@@ -776,7 +785,7 @@
       display: none;
     }
 
-    &:nth-child(6) {
+    &--tablet-current {
       color: #FE9013;
   
       .pick-feed__control-mark {
@@ -801,7 +810,29 @@
           border: 2px solid #FE9013;
           border-radius: 50%;
           top: -15px;
-          left: -15px;
+          left: -14.5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    &--tablet-current {
+      .pick-feed__control-mark {
+        &::after {
+          width: 11.48px;
+          height: 11.48px;
+          top: -3.15px;
+          left: -3.15px;
+          border-width: 1px;
+        }
+
+        &::before {
+          width: 20px;
+          height: 20px;
+          top: -7.8px;
+          left: -7.5px;
+          border-width: 1px;
         }
       }
     }
@@ -886,8 +917,8 @@
     }
 
     @media (max-width: $mobile-width) {
-      right: -14px;
-      top: -63px;
+      right: 10px;
+      top: -57px;
     }
   }
 }
@@ -924,7 +955,7 @@
   border-radius: 50px;
   content: '';
   background: #FE9013;
-  top: 2px;
+  top: 3px;
   left: 3px;
 }
 
@@ -956,6 +987,7 @@
 
   @media (max-width: $mobile-width) {
     text-align: left;
-    font-size: 15px;
+    font-size: 15.5px;
+    margin-left: 5px;
   }
 }
